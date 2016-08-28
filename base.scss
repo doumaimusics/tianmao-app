@@ -1,0 +1,97 @@
+body{
+  font-family:"微软雅黑";
+}
+i{
+    font-style: normal;
+}
+h1,h2,h3,h4,h5,h6{
+  padding:0;
+  margin:0;
+}
+*{
+  padding:0;
+  margin:0;
+  list-style: none;
+  text-decoration: none;
+  position: relative;
+}
+img{border: none;}
+input{
+  border: none;
+  margin:0;
+  padding:0;
+  outline: none;
+}
+@mixin cube ($size){
+  width:$size;
+  height:$size;
+}
+@mixin matrix($width,$height){
+  width: $width;
+  height:$height;
+}
+@mixin circle($size){
+  width: $size;
+  height:$size;
+  border-radius:50%;
+}
+@mixin right-left{
+  position: absolute;
+  left:0;
+  right:0;
+  margin: auto;
+}
+@mixin top-bottom{
+  position: absolute;
+  top:0;
+  bottom:0;
+  margin: auto;
+}
+@mixin fixed{
+    position: fixed;
+    left:0;
+    top:0;
+};
+@mixin center{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin: auto;
+}
+@mixin gai{
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+}
+@mixin userem($size){
+  $list:800px,414px,412px,384px,375px,360px,320px;
+  @each $i in  $list{
+    @media screen and (max-width: #{$i}){
+      html{
+        font-size:100px * ( $i / $size );
+      }
+    }
+  }
+}
+@include userem(750px);
+@font-face {
+  font-family: "iconfont";
+  src: url('./fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+}
+
+.icon {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+}
+.icon-31sousuo::before { content: "\f01fd"; }
+.icon-31xiaoxi::before { content: "\f0200"; }
+.icon-31huidaodingbu::before { content: "\f0209"; }
+.icon-laba::before { content: "\f01f4"; }
+.icon-31shuaxin::before { content: "\f01fc"; }
+.icon-31saoma::before { content: "\f01fa"; }
+.icon-31fenxiang::before { content: "\f01ba"; }

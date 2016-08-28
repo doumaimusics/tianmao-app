@@ -1,0 +1,1118 @@
+@import "base";
+.header{
+    @include fixed;
+    width:100%;
+    z-index:10;
+    height:1.12rem;
+    background: rgba(204,204,204,0.3);
+        .saoma{
+            @include matrix(0.7rem,0.71rem);
+            @include top-bottom;
+            left:0.32rem;
+            text-align:center;
+            i{  
+            position: absolute;
+            left:0.04rem;
+            top:0;        
+            color:#fff;
+            font-size: 0.39rem;
+            }                 
+           span{
+               position: absolute;
+               left:0;
+               top:0.38rem;              
+               display:block;
+               font-size: 0.12rem;
+               color:#fff;
+           }
+        }
+        .search{
+            @include matrix(5.20rem,0.68rem);
+            @include center;
+            #input{
+                @include matrix(100%,100%);
+                border-radius:0.05rem;
+                position:absolute;
+                left:0;
+                top:0;  
+                background: #e7e7e7; 
+                text-indent: 0.50rem; 
+            }
+            i{
+            position: absolute;
+            left:0.13rem;
+            top:0.17rem;
+            color:#a89e9d;             
+            }
+        }
+         .xinxi{   
+            @include matrix(0.6rem,0.79rem);
+            @include top-bottom;
+            right:0.27rem;
+            text-align:center;
+            i{
+            color:#fff;
+            font-size: 0.39rem;
+             position: absolute;
+             left:0.04rem;
+             top:0; 
+            }                            
+           span{
+               position: absolute;
+               left:0;
+               top:0.38rem; 
+               display:block;
+               font-size: 0.12rem;
+               color:#fff;
+           }
+        }
+}
+
+
+//内容开始
+.content{
+    width: 100%;
+    height: auto;
+    overflow-y:auto;
+}
+//banner开始
+.banner{
+    width:100%;
+    height:3.22rem;
+    .banner-inner{
+        width:100%;
+        height:100%;
+        overflow: hidden;
+        li{
+           display:none;
+           width:100%;
+           height:100%;
+           position:absolute;
+           left:0;
+           top:0;
+           transition:transform .8s ease;
+           @for $i from 1 through 5{
+               &:nth-child(#{$i}){
+                   background: url("./imgs/banner#{$i}.png") no-repeat;
+                   background-size:100% 100%;
+               }
+           }
+        }
+        .item.active{
+            display:block;
+            transform: translateX(0);
+        }
+        .item.left{
+            display: block;
+            transform:translateX(-100%);
+        }
+        .item.right{
+            display: block;
+            transform:translateX(100%);
+        }
+       }
+        .btn{
+            position: absolute;
+            right:2%;
+            bottom:2%;           
+           @include matrix(1.0rem,0.1rem);
+           li{
+               border-radius:50%;
+               margin-right: 0.1rem;
+               @include cube(0.1rem);
+               border:0.01rem  solid #b5b3b4; 
+               box-sizing: border-box;
+               float:left;
+           }
+           li.active{
+               background: #b5b3b4;
+           }        
+    }
+}
+
+//分类开始
+.fenlei{
+    @include matrix(100%,3.05rem);
+    border-bottom:0.01rem solid #ededed ;
+    .fen-word{
+        width:20%;
+        height:1.25rem;
+        padding-top: 0.2rem;
+        float:left;
+        text-align: center;
+        .one{
+            margin: 0 auto;
+            @include cube(0.87rem);
+            background: url(./imgs/jifen.png)no-repeat center center;
+            background-size: 100%;
+            a{
+                @include gai;
+            }
+        }
+        .two{
+            margin: 0 auto;          
+            @include cube(0.87rem);
+            background: url(./imgs/chongzhi.png)no-repeat center center;
+            background-size: 100%;
+             a{
+                @include gai;
+            }
+        }
+        .three{
+            margin: 0 auto;          
+            @include cube(0.87rem);
+            background: url(./imgs/jinkou.png)no-repeat center center;
+            background-size: 100%;
+             a{
+                @include gai;
+            }
+        }
+        .four{
+            margin: 0 auto;            
+            @include cube(0.87rem);
+            background: url(./imgs/ju.png)no-repeat center center;
+            background-size: 100%;
+             a{
+                @include gai;
+            }
+        }
+        .five{
+            margin: 0 auto;            
+            @include cube(0.87rem);
+            background: url(./imgs/chaoshi.png)no-repeat center center;
+            background-size: 100%;
+              a{
+                @include gai;
+            }
+        }
+        .six{
+            margin: 0 auto;           
+            @include cube(0.87rem);
+            background: url(./imgs/shi.png)no-repeat center center;
+            background-size: 100%;
+              a{
+                @include gai;
+            }
+        }
+        .seven{
+            margin: 0 auto;          
+            @include cube(0.87rem);
+            background: url(./imgs/pinpai.png)no-repeat center center;
+            background-size: 100%;
+              a{
+                @include gai;
+            }
+        }
+        .eight{ 
+            margin: 0 auto;                     
+            @include cube(0.87rem);
+            background: url(./imgs/fans.png)no-repeat center center;
+            background-size: 100%;
+              a{
+                @include gai;
+            }
+        }
+        .nine{
+            margin: 0 auto;        
+            @include cube(0.87rem);
+            background: url(./imgs/lingqian.png)no-repeat center center;
+            background-size: 100%;
+              a{
+                @include gai;
+            }
+        }
+        .ten{
+            margin: 0 auto;           
+            @include cube(0.87rem);
+            background: url(./imgs/fenlei.png)no-repeat center center;
+            background-size: 100%;
+              a{
+                @include gai;
+            }
+        }
+        a{
+            display: block;
+            margin-top:0.1rem;
+            font-size:0.12rem;
+            color:#000000;
+            font-weight: 100;
+        }
+    }
+}
+//热点开始
+.redian{
+    width: 100%;
+    height:1.24rem;
+    .redian{
+        float:left;
+        @include matrix(1.02rem,0.83rem);
+        margin: 0.20rem 0.33rem 0 0.1rem;
+        background-size: 100%;
+    }
+    i{
+        position: absolute;
+        left:1.46rem;
+        top:0.46rem;
+        color:#cf5b5c;
+    }
+    .remen{
+        width: 70%;
+        height:100%;
+        float:right;
+        li{
+        width: 100%;
+        height:100%;
+        padding-top:0.27rem;
+        padding-left:0.1rem;
+        box-sizing: border-box;
+        .title1{
+            font-size:0.2rem;
+            color:#000;
+            font-weight: 200;
+        }
+        .title2{
+            img{
+               @include matrix(0.54rem,0.30rem);
+               background-size:100% ;
+               vertical-align: bottom;
+              margin-right: 0.1rem;
+            }       
+            font-size:0.2rem;
+            color:#c55a52;
+            font-weight: 200;
+        }
+        }
+        
+    }
+}
+//福利礼包开始
+.quan{
+    width:100%;
+    height:1.87rem;
+   box-sizing: border-box;
+    background: #efefef;
+     padding: 0.20rem 0.17rem;
+    img{    
+        @include matrix(7.16rem,1.49rem);
+        background-size: 100%;     
+    }
+}
+//欢聚开始
+.huan{
+    width: 100%;
+    height: 1.86rem;
+    img{
+    width: 100%;
+    height: 1.86rem; 
+    background-size: 100%;    
+    }
+}
+//直播开始
+.zhibo{
+    width: 100%;
+    height:2.12rem;
+    padding-left:0.02rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    .zhibo-inner{
+         width: 540%;
+         height:2.12rem;
+         li{
+         width: 3.46rem;
+         height:2.08rem; 
+         float:left;
+         margin-right: 0.03rem;
+         a{
+             @include gai;
+             img{
+                 width: 3.46rem;
+                 height: 2.08rem; 
+                 background-size: 100%;
+             }
+         }
+         }
+    }
+}
+//必抢开始
+.biqiang{
+    width: 100%;
+    height: 3.56rem;
+     background:#eee;
+    .biqiang-inner{
+       margin: 0 auto;
+       @include matrix(2.0rem,0.60rem);           
+        h3{
+          @include matrix(100%,100%);
+          margin-top: 0.1rem;
+          @include gai;
+          text-indent:0.95rem;
+          line-height: 0.50rem;
+          font-size: 0.2rem;
+          color:#d6263b;
+          .xian{
+             position: absolute;
+             top:0.20rem;
+             left:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:left;
+          }
+          .xian1{
+              position: absolute;
+             top:0.20rem;
+             right:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:right;
+          }
+          .biqiang{
+             position: absolute;
+             top:0.07rem;
+             left:0.62rem;
+              @include matrix(0.28rem,0.33rem);
+              background-size: 100%;
+              float:left;
+          }
+        }
+      }
+       .contentbox{
+        width:100%;
+        height:2.97rem;
+        background: #fff;
+        .content-inner{
+            width:100%;
+            height:2.97rem;
+            li{
+                width:25%;
+                height: 2.96rem;
+                border-right:0.01rem solid #efefef;
+                box-sizing: border-box;
+                float:left;
+              h1{
+                line-height:0.72rem; ;
+                width:100%;
+                height: 0.72rem;
+                color:#000;
+                font-weight:300;
+                font-size: 0.2rem;
+                text-align: center;              
+            } 
+            img{
+                @include matrix(1.60rem,1.58rem); 
+                background-size: 100%;
+                margin-left:0.15rem;   
+            }
+            .jiage{
+                @include matrix(100%,0.67rem); 
+                font-size:0.12rem;
+                .jia{
+                    float:left;    
+                    display: block;
+                    background: #fff5ff;
+                    margin-left: 0.37rem;
+                    color:#b63c4b;
+                }
+                .qujia{
+                    float:left;
+                    display: block;
+                    background: #fff5ff;
+                    margin-left: 0.1rem;
+                    color:#a7a7a7;
+                    text-decoration: line-through;
+                }
+            }
+            }
+   }
+  }
+}
+//品牌开始
+.pinpai{
+    width: 100%;
+    height: 3.53rem;
+     background:#eee;
+    .biqiang-inner{
+       margin: 0 auto;
+       @include matrix(2.5rem,0.60rem);           
+        h3{
+          @include matrix(100%,100%);
+          margin-top: 0.1rem;
+          @include gai;
+          text-indent:1rem;
+          line-height: 0.4rem;
+          font-size: 0.2rem;
+          color:#d6263b;
+          .xian{
+             position: absolute;
+             top:0.2rem;
+             left:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:left;
+          }
+          .xian1{
+             position: absolute;
+             top:0.2rem;
+             right:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:right;
+          }
+          .biqiang{
+             position: absolute;
+             top:0.07rem;
+             left:0.62rem;
+              @include matrix(0.33rem,0.35rem);
+              background-size: 100%;
+              float:left;
+          }
+        }
+      }
+       .contentbox{
+        width:100%;
+        height:2.96rem;
+        background: #fff;
+        .content-inner{
+            width:100%;
+            height:2.96rem;
+            li{
+                width:33.333%;
+                height: 2.96rem;
+                border-right:0.01rem solid #efefef;
+                box-sizing: border-box;
+                float:left;
+              h1{
+                margin-top:0.15rem;
+                width:100%;
+                height: 0.32rem;
+                color:#000;
+                font-weight:bold;
+                font-size: 0.22rem;
+                text-align: center;              
+            } 
+            h2{
+                width:100%;
+                height: 0.32rem;
+                color:#72a4a1;
+                font-weight:300;
+                font-size: 0.2rem;
+                text-align: center; 
+            }
+            img{
+                @include matrix(1.85rem,2.49rem); 
+                background-size: 100%;
+                margin-left:0.32rem;   
+            }
+          
+            }
+    }
+   }
+  
+}
+//精选市场
+.jingxuan{
+    width: 100%;
+    height: 5.45rem;
+     background:#eee;
+    .biqiang-inner{
+       margin: 0 auto;
+       @include matrix(2.5rem,0.60rem);           
+        h3{
+          @include matrix(100%,100%);
+          margin-top: 0.1rem;
+          @include gai;
+          text-indent:1rem;
+          line-height: 0.4rem;
+          font-size: 0.2rem;
+          color:#d6263b;
+          .xian{
+             position: absolute;
+             top:0.2rem;
+             left:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:left;
+          }
+          .xian1{
+             position: absolute;
+             top:0.2rem;
+             right:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:right;
+          }
+          .biqiang{
+             position: absolute;
+             top:0.07rem;
+             left:0.62rem;
+              @include matrix(0.33rem,0.35rem);
+              background-size: 100%;
+              float:left;
+          }
+        }
+      }
+       .contentbox{
+        width:100%;
+        height:4.84rem;
+        background: #fff;
+        .content-inner{
+            width:100%;
+            height:4.84rem;
+            li.top{
+                width:25%;
+                height: 2.96rem;
+                border-right:0.01rem solid #efefef;
+                box-sizing: border-box;
+                float:left;
+                border-bottom: 0.01rem solid #ccc;
+              h1{
+                margin-top:0.15rem;
+                width:100%;
+                height: 0.32rem;
+                color:#000;
+                font-weight:bold;
+                font-size: 0.22rem;
+                text-align: center;              
+            } 
+            h2{
+                width:100%;
+                height: 0.32rem;
+                color:#72a4a1;
+                font-weight:300;
+                font-size: 0.2rem;
+                text-align: center; 
+            }
+            img{
+                @include matrix(1.66rem,1.70rem); 
+                background-size: 100%;
+               margin-left:0.15rem;
+            }
+          
+            }
+              li.bottom{
+                width:50%;
+                border-right:0.01rem solid #efefef;
+                box-sizing: border-box;
+                float:left;
+                .zuo{
+                    float:left;
+                    margin-top: 0.4rem;
+                    margin-left: 0.1rem;
+                 h1{
+                margin-top:0.15rem;
+                width:100%;
+                height: 0.32rem;
+                color:#000;
+                font-weight:bold;
+                font-size: 0.22rem;
+                text-align: center;              
+            } 
+            h2{
+                margin-top:0.1rem;
+                width:100%;
+                height: 0.32rem;
+                color:#72a4a1;
+                font-weight:300;
+                font-size: 0.2rem;
+                text-align: center; 
+            }
+                }
+            
+            img{
+                 margin-top:0.1rem;
+                @include matrix(1.66rem,1.70rem); 
+                background-size: 100%;
+                margin-left:0.25rem;
+            }
+          
+            }
+    }
+   }
+  
+}
+//生活开始
+.shenghuo{
+    width: 100%;
+    height: 3.53rem;
+     background:#eee;
+    .biqiang-inner{
+       margin: 0 auto;
+       @include matrix(2.5rem,0.60rem);           
+        h3{
+          @include matrix(100%,100%);
+          margin-top: 0.1rem;
+          @include gai;
+          text-indent:1rem;
+          line-height: 0.4rem;
+          font-size: 0.2rem;
+          color:#d6263b;
+          .xian{
+             position: absolute;
+             top:0.2rem;
+             left:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:left;
+          }
+          .xian1{
+             position: absolute;
+             top:0.2rem;
+             right:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:right;
+          }
+          .biqiang{
+             position: absolute;
+             top:0.01rem;
+             left:0.62rem;
+              @include matrix(0.33rem,0.35rem);
+              background-size: 100%;
+              float:left;
+          }
+        }
+      }
+       .contentbox{
+        width:100%;
+        height:2.96rem;
+        background: #fff;
+        .content-inner{
+            width:100%;
+            height:2.96rem;
+            li{
+                width:25%;
+                height: 2.96rem;
+                border-right:0.01rem solid #efefef;
+                box-sizing: border-box;
+                float:left;
+              h1{
+                margin-top:0.15rem;
+                width:100%;
+                height: 0.32rem;
+                color:#000;
+                font-weight:bold;
+                font-size: 0.22rem;
+                text-align: center;              
+            } 
+            h2{
+                width:100%;
+                height: 0.32rem;
+                color:#72a4a1;
+                font-weight:300;
+                font-size: 0.2rem;
+                text-align: center; 
+            }
+            img{
+                @include matrix(1.66rem,1.82rem); 
+                background-size: 100%;
+               
+            }
+          
+            }
+    }
+   }
+  
+}
+//品牌特卖开始
+.temai{
+    width: 100%;
+    height: 2.76rem;
+     background:#eee;
+    .biqiang-inner{
+       margin: 0 auto;
+       @include matrix(2.5rem,0.60rem);           
+        h3{
+          @include matrix(100%,100%);
+          margin-top: 0.1rem;
+          @include gai;
+          text-indent:1rem;
+          line-height: 0.5rem;
+          font-size: 0.2rem;
+          color:#d6263b;
+          .xian{
+             position: absolute;
+             top:0.2rem;
+             left:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:left;
+          }
+          .xian1{
+             position: absolute;
+             top:0.2rem;
+             right:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:right;
+          }
+          .biqiang{
+             position: absolute;
+             top:0.07rem;
+             left:0.62rem;
+              @include matrix(0.33rem,0.35rem);
+              background-size: 100%;
+              float:left;
+          }
+        }
+      }
+       .contentbox{
+        width:100%;
+        height:2.16rem;
+        background: #fff;
+       .zuo,.you{
+           width: 50%;
+           height:100%;
+           
+           img{
+           width: 100%;
+           height:100%;
+           background-size: 100%;
+           }
+       }
+     .zuo{
+         float:left;
+         border-right:0.01rem solid #efefef;
+         box-sizing: border-box;
+     }
+     .you{
+         float:right;
+     }
+   }
+}
+//冰洗大钜惠开始
+.bing{
+    width: 100%;
+    height:1.84rem;
+    border-top:0.02rem solid #A89E9D;
+    img{
+        width: 100%;
+        height:100%;
+        background-size: 100%; 
+    } 
+}
+
+//行业开始
+.hangye{
+    width: 100%;
+    height: 7.83rem;
+     background:#eee;
+    .biqiang-inner{
+       margin: 0 auto;
+       @include matrix(2.44rem,0.60rem);           
+        h3{
+          @include matrix(100%,100%);
+        
+          @include gai;
+          text-indent:0.95rem;
+          line-height: 0.50rem;
+          font-size: 0.2rem;
+          color:#d6263b;
+          .xian{
+             position: absolute;
+             top:0.20rem;
+             left:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:left;
+          }
+          .xian1{
+              position: absolute;
+             top:0.20rem;
+             right:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:right;
+          }
+          .biqiang{
+             position: absolute;
+             top:0.07rem;
+             left:0.62rem;
+              @include matrix(0.28rem,0.33rem);
+              background-size: 100%;
+              float:left;
+          }
+        }
+      }
+       .contentbox{
+        width:100%;
+        height:7.25rem;
+        background: #fff;
+        .content-inner{
+            width:100%;
+            height:7.25rem;
+            li.top{
+                width:50%;
+                height: 1.97rem;
+                border-right:0.01rem solid #efefef;
+                border-bottom:0.01rem solid #efefef;
+                box-sizing: border-box;
+                float:left;
+              .zuo{
+                float:left;
+                margin-left: 0.30rem;
+                img{
+                    width:0.76rem;
+                    height: 0.9rem; 
+                    background-size: 100%;
+                }
+               h1{
+                line-height:0.72rem;
+                width:1rem;
+                height:0.35rem;
+                color:#000;
+                font-weight:bold;
+                font-size: 0.2rem;
+                text-align: center;              
+            } 
+            h2{
+                line-height:0.72rem; 
+                width:1rem;
+                height:0.35rem;
+                color:#ccc;
+                font-weight:300;
+                font-size: 0.2rem;
+                text-align: center; 
+                margin-bottom: 0.2rem;                  
+            } 
+              }
+           
+            img{
+                float:right;
+                @include matrix(1.06rem,1.96rem); 
+                background-size: 100%;
+                margin-left:0.15rem;   
+            }
+         }
+           li.bottom{
+                width:25%;
+                height: 2.63rem;
+                border-right:0.01rem solid #efefef;
+                border-top:0.01rem solid #efefef;
+                box-sizing: border-box;
+                float:left;
+              h1{
+                width:100%;
+                margin-top: 0.15rem;
+                color:#000;
+                font-weight:bold;
+                font-size: 0.2rem;
+                text-align: center;              
+            } 
+            h2{
+               
+                width:100%;
+               
+                color:#ccc;
+                font-weight:300;
+                font-size: 0.2rem;
+                text-align: center; 
+                       
+            } 
+            img{
+                @include matrix(1.60rem,1.60rem); 
+                background-size: 100%;
+                 
+            }
+         }
+   }
+  }
+}
+
+
+//旗舰开始
+.qijian{
+    width: 100%;
+    height:7.15rem;
+     background:#eee;
+    .biqiang-inner{
+       margin: 0 auto;
+       @include matrix(2.5rem,0.60rem);           
+        h3{
+          @include matrix(100%,100%);
+          margin-top: 0.1rem;
+          @include gai;
+          text-indent:1rem;
+          line-height: 0.4rem;
+          font-size: 0.2rem;
+          color:#d6263b;
+          .xian{
+             position: absolute;
+             top:0.2rem;
+             left:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:left;
+          }
+          .xian1{
+             position: absolute;
+             top:0.2rem;
+             right:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:right;
+          }
+          .biqiang{
+             position: absolute;
+             top:0.01rem;
+             left:0.62rem;
+              @include matrix(0.33rem,0.35rem);
+              background-size: 100%;
+              float:left;
+          }
+        }
+      }
+       .contentbox{
+        width:100%;
+        height:6.60rem;
+        .content-inner{
+            width:100%;
+            height:6.60rem;
+            li{
+                width:50%;
+                height:3.30rem;
+                border-right:0.05rem solid #c4c2c2;
+                border-bottom:0.18rem solid #c4c2c2;
+                box-sizing: border-box;
+                float:left;
+            .da{
+                @include matrix(100%,80%); 
+                background-size: 100%;
+            }
+          .neirong{
+              width: 100%;
+              height:20%;
+              position: absolute;
+              bottom: -0.01rem;
+              left:0;
+              img{
+                @include matrix(0.5rem,0.57rem); 
+                background-size: 100%;
+                float:left;
+                margin-right: 0.1rem;
+              }
+            h1{
+                font-size: 0.12rem;
+                color:#000;
+                font-weight: bold;
+                margin-top: 0.05rem;
+            }
+            span{
+                display: block;
+                font-size: 0.12rem;
+                color:#ccc;
+                font-weight:200;
+            }
+          }
+      }
+    }
+   }
+  
+}
+
+//猜你喜欢开始
+
+.caini{
+    width: 100%;
+    height:7.15rem;
+     background:#eee;
+    .biqiang-inner{
+       margin: 0 auto;
+       @include matrix(2.5rem,0.60rem);           
+        h3{
+          @include matrix(100%,100%);
+          margin-top: 0.1rem;
+          @include gai;
+          text-indent:1rem;
+          line-height: 0.4rem;
+          font-size: 0.2rem;
+          color:#d6263b;
+          .xian{
+             position: absolute;
+             top:0.2rem;
+             left:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:left;
+          }
+          .xian1{
+             position: absolute;
+             top:0.2rem;
+             right:0;
+              @include matrix(0.58rem,0.07rem);
+              background-size: 100%;
+              float:right;
+          }
+          .biqiang{
+             position: absolute;
+             top:0.01rem;
+             left:0.62rem;
+              @include matrix(0.33rem,0.35rem);
+              background-size: 100%;
+              float:left;
+          }
+        }
+      }
+      
+      .cai-inner{
+          width: 100%;
+          height:5.28rem;
+          .hang{
+          width: 100%;
+          height:100%;
+        .left{
+            width:30%;
+            height: 100%;
+            float:left;
+            background: #000;
+        }
+          .right{
+            width:30%;
+            height: 100%;
+            float:right;
+             background: #000;
+        }
+          }
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+//底部
+.footer{
+    width: 100%;
+    height:1rem;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background: #fdfdfd;
+    .a{
+      width:20%;
+      height:100%;
+      float:left;
+      text-align: center;
+      font-size:0.2rem;
+      color:#a1a1a1;
+      .active{
+           color:#df2027;
+      }
+     span{
+         display: block;
+         margin-top:38%;
+         margin-left: -0.15rem;
+     }
+      img{
+          position: absolute;
+          left:20%;
+          top:1%;
+          @include matrix(0.68rem,0.56rem);
+          background-size:100%;
+      }
+    }
+}
